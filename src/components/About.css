@@ -1,0 +1,105 @@
+.about {
+  position: relative;
+  padding: var(--section-padding) 0;
+  overflow: hidden;
+}
+
+.about__bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--accent-purple);
+  filter: blur(140px);
+  opacity: 0.12;
+  right: -150px;
+  top: 10%;
+  pointer-events: none;
+}
+
+.about__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about__text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.about__text--muted {
+  color: var(--text-muted);
+}
+
+.about__card {
+  background: var(--gradient-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s var(--ease-smooth);
+}
+
+.about__card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+}
+
+.about__card-degree {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about__card-institution,
+.about__card-university {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.about__card-year {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about__card {
+    order: -1;
+  }
+}
+
+@media (max-width: 500px) {
+  .about__card {
+    padding: 1.25rem;
+  }
+
+  .about__text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
