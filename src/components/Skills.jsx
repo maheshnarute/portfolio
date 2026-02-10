@@ -3,14 +3,8 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useFadeInOut } from '../hooks/useFadeInOut';
 import {
   SiReact,
-  SiRedux,
   SiPython,
-  SiDjango,
   SiPostgresql,
-  SiMysql,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
   SiGit,
   SiGithub,
 } from 'react-icons/si';
