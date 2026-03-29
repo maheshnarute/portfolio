@@ -10,7 +10,7 @@ export const personalInfo = {
   github: 'https://github.com/maheshnarute',
 };
 
-export const summary = `Results-driven Full-Stack Developer with 2 years of experience specializing in React.js, Redux, and Python (Django/Django REST Framework). Skilled in designing, developing, and integrating scalable, high-performance web applications. Strong understanding of frontend architecture, API development, and backend logic.`;
+export const summary = `Results-driven Full-Stack Developer with 3 years of experience specializing in React.js, Redux, and Python (Django/Django REST Framework). Skilled in designing, developing, and integrating scalable, high-performance web applications. Strong understanding of frontend architecture, API development, and backend logic.`;
 
 export const skills = {
   frontend: ['React.js', 'React Hooks', 'Context API', 'Redux', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Bootstrap'],

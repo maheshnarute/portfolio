@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useFadeInOut } from '../hooks/useFadeInOut';
-import { HiExternalLink, HiCode } from 'react-icons/hi';
+import { HiCode } from 'react-icons/hi';
 import { projects } from '../data/portfolioData';
 import './Projects.css';
 
@@ -75,7 +75,7 @@ export default function Projects() {
                       </motion.li>
                     ))}
                   </ul>
-                  <div className="projects__card-overlay">
+                  {/* <div className="projects__card-overlay">
                     <motion.a
                       href={project.link || '#'}
                       className="projects__card-link"
@@ -90,7 +90,7 @@ export default function Projects() {
                       <HiExternalLink size={22} />
                       {project.link ? 'View Project' : 'Coming Soon'}
                     </motion.a>
-                  </div>
+                  </div> */}
                 </div>
               </motion.article>
             ))}
