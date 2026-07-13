@@ -2,21 +2,8 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiArrowDown, HiLocationMarker, HiExternalLink } from 'react-icons/hi';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import {
-  SiPython, SiDjango, SiReact, SiPostgresql, SiDocker, SiRedis,
-} from 'react-icons/si';
 import { personalInfo } from '../data/portfolioData';
 import './Hero.css';
-
-/* ── Floating tech badges around profile ── */
-const TECH_BADGES = [
-  { Icon: SiReact, label: 'React', color: '#61dafb', top: '5%', left: '75%', delay: 0 },
-  { Icon: SiPython, label: 'Python', color: '#3776ab', top: '20%', left: '80%', delay: 0.3 },
-  { Icon: SiDjango, label: 'Django', color: '#0c4b33', top: '75%', left: '78%', delay: 0.6 },
-  { Icon: SiDocker, label: 'Docker', color: '#2496ed', top: '80%', left: '18%', delay: 0.9 },
-  { Icon: SiPostgresql, label: 'PostgreSQL', color: '#336791', top: '20%', left: '12%', delay: 1.2 },
-  { Icon: SiRedis, label: 'Redis', color: '#dc382d', top: '5%', left: '20%', delay: 1.5 },
-];
 
 /* ── Character-split animated name ── */
 function AnimatedName({ name }) {

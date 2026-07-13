@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { personalInfo, softSkills } from '../data/portfolioData';
+import { personalInfo } from '../data/portfolioData';
 import './Footer.css';
 
 const footerLinks = [

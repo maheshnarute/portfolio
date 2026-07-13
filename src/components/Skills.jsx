@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import {
-  SiReact, SiPython, SiPostgresql, SiDocker, SiGithub, SiRedis,
+  SiReact, SiPython, SiPostgresql, SiDocker, SiGithub,
 } from 'react-icons/si';
 import { HiLightningBolt, HiShieldCheck } from 'react-icons/hi';
 import { skills } from '../data/portfolioData';

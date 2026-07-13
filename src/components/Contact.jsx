@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { HiMail, HiPhone, HiLocationMarker, HiExternalLink } from 'react-icons/hi';
+import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolioData';
 import './Contact.css';
