@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="#0a0a0f" />
+  <rect width="98" height="98" x="1" y="1" rx="19" fill="none" stroke="url(#neonGrad)" stroke-width="2" opacity="0.6" />
+  <text x="50%" y="58%" font-family="'Syne', 'Outfit', sans-serif" font-size="42" font-weight="900" fill="url(#neonGrad)" text-anchor="middle" dominant-baseline="middle">MN</text>
+</svg>

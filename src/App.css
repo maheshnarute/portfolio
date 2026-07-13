@@ -1,14 +1,24 @@
-/* Shared section styles */
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
-.section-title__accent {
-  color: var(--accent-cyan);
-  font-family: var(--font-body);
-  font-weight: 600;
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar — repeated from index.css for specificity */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-mint), var(--accent-purple));
 }

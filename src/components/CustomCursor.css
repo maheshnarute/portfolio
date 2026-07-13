@@ -1,0 +1,55 @@
+/* Only shown on devices with fine pointer — JS handles this gate */
+.cursor__dot,
+.cursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  will-change: transform;
+  mix-blend-mode: screen;
+  transform: translate(-200px, -200px);
+}
+
+.cursor__dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 12px var(--accent-cyan), 0 0 24px rgba(0, 212, 255, 0.5);
+  transition: width 0.15s ease, height 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cursor__ring {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid rgba(0, 212, 255, 0.45);
+  background: transparent;
+  transition: width 0.25s var(--ease-bounce), height 0.25s var(--ease-bounce), border-color 0.2s ease, transform 0.1s ease;
+}
+
+/* ─── Hover state ─── */
+.cursor__dot--hover {
+  width: 7px;
+  height: 7px;
+  background: var(--accent-mint);
+  box-shadow: 0 0 14px var(--accent-mint), 0 0 28px rgba(0, 255, 200, 0.5);
+}
+.cursor__ring--hover {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(0, 255, 200, 0.6);
+}
+
+/* ─── Click state ─── */
+.cursor__dot--click {
+  width: 14px;
+  height: 14px;
+  background: var(--accent-purple);
+  box-shadow: 0 0 20px var(--accent-purple), 0 0 40px rgba(168,85,247,0.5);
+}
+.cursor__ring--click {
+  width: 32px;
+  height: 32px;
+  border-color: rgba(168, 85, 247, 0.8);
+}

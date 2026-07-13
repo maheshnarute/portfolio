@@ -1,49 +1,47 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
+import ParticleField from './components/ParticleField';
+import ScrollProgress from './components/ScrollProgress';
+import LoadingScreen from './components/LoadingScreen';
 import './App.css';
 
-// Smooth scroll with easing - intercepts anchor clicks
-function useSmoothScroll() {
-  useEffect(() => {
-    const handleClick = (e) => {
-      const target = e.target.closest('a[href^="#"]');
-      if (target && target.getAttribute('href') !== '#') {
-        const id = target.getAttribute('href').slice(1);
-        const element = document.getElementById(id);
-        if (element) {
-          e.preventDefault();
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    };
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
-  }, []);
-}
-
 function App() {
-  useSmoothScroll();
+  const [loaded, setLoaded] = useState(false);
+  const handleLoadComplete = useCallback(() => setLoaded(true), []);
 
   return (
-    <div className="app">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-        <Footer />
-      </main>
-    </div>
+    <>
+      <LoadingScreen onComplete={handleLoadComplete} />
+      {loaded && (
+        <>
+          <CustomCursor />
+          <ParticleField />
+          <ScrollProgress />
+          <div className="app">
+            <Navbar />
+            <main>
+              <Hero />
+              <About />
+              <Skills />
+              <Experience />
+              <Projects />
+              <Certifications />
+              <Contact />
+              <Footer />
+            </main>
+          </div>
+        </>
+      )}
+    </>
   );
 }
 

@@ -1,42 +1,84 @@
-.skills {
-  position: relative;
-  padding: var(--section-padding) 0;
-  overflow: hidden;
-}
+.skills { position: relative; }
 
 .skills__bg {
   position: absolute;
-  width: 600px;
-  height: 600px;
-  background: var(--accent-cyan);
-  filter: blur(150px);
-  opacity: 0.12;
-  left: -200px;
-  bottom: 10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.08), transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  top: -80px; left: -80px;
   pointer-events: none;
 }
-
-.skills__container {
-  max-width: var(--container-max);
-  margin: 0 auto;
+.skills__bg--2 {
+  position: absolute;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0, 255, 200, 0.06), transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  bottom: -80px; right: -80px;
+  pointer-events: none;
 }
 
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 1.5rem;
-  margin-top: 3rem;
 }
 
+/* ─── Card ─── */
 .skills__card {
-  background: var(--gradient-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  padding: 2rem;
-  backdrop-filter: blur(10px);
-  transition: all 0.4s var(--ease-smooth);
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.75rem;
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  transform-style: preserve-3d;
+  touch-action: manipulation;
+}
+.skills__card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
 }
 
+/* Holographic shimmer overlay */
+.skills__card-holo {
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from var(--angle, 0deg), transparent 0deg, rgba(255,255,255,0.04) 40deg, transparent 80deg);
+  animation: holo-spin 5s linear infinite;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.skills__card:hover .skills__card-holo { opacity: 1; }
+
+/* Card shine sweep on hover */
+.skills__card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.skills__card:hover::after { left: 200%; }
+
+/* Top color bar */
+.skills__card-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+
+/* ─── Header ─── */
 .skills__card-header {
   display: flex;
   align-items: center;
@@ -44,51 +86,49 @@
   margin-bottom: 1.25rem;
 }
 
-.skills__card-icon {
-  color: var(--accent-cyan);
+.skills__icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 42px; height: 42px;
+  border-radius: 11px;
+  border: 1px solid;
+  touch-action: manipulation;
+  flex-shrink: 0;
 }
 
 .skills__card-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: 0.02em;
 }
 
-.skills__list {
+/* ─── Tags ─── */
+.skills__tags {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.45rem;
 }
 
-.skills__item {
-  font-size: 0.95rem;
+.skills__tag {
+  padding: 0.3rem 0.65rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  font-size: 0.78rem;
   color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color 0.2s;
+  transition: all 0.25s var(--ease-bounce);
+  touch-action: manipulation;
+}
+.skills__tag:hover {
+  background: color-mix(in srgb, var(--tag-color, var(--accent-cyan)) 12%, transparent);
+  border-color: color-mix(in srgb, var(--tag-color, var(--accent-cyan)) 40%, transparent);
+  color: var(--text-primary);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--tag-color, var(--accent-cyan)) 20%, transparent);
 }
 
-.skills__bullet {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-cyan);
-  flex-shrink: 0;
-  opacity: 0.7;
-}
-
-@media (max-width: 500px) {
-  .skills__card {
-    padding: 1.25rem;
-  }
-
-  .skills__grid {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    gap: 1rem;
-  }
+@media (max-width: 640px) {
+  .skills__grid { grid-template-columns: 1fr; }
 }
